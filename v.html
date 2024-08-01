@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muqtadir - Gardening & Landscaping</title>
+    <link rel="stylesheet" href="v.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>MUQTADIR</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Page</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <button class="quote-button">Get A Quote</button>
+                <button class="cart-button">Add to Cart</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="project-section">
+            <h2>Our Garden Project Work</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="project1.jpg" alt="Project 1">
+                </div>
+                <div class="project">
+                    <img src="project2.jpg" alt="Project 2">
+                </div>
+                <div class="project">
+                    <img src="project3.jpg" alt="Project 3">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="slider">
+        <div class="slide">
+            <div class="card">
+                <img src="image1.jpg" alt="Yard Plant">
+                <div class="card-content">
+                    <h3>Yard Plant</h3>
+                    <p>Garden</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image2.jpg" alt="Woman Watering Plants">
+                <div class="card-content">
+                    <h3>Watering Plants</h3>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image3.jpg" alt="Woman with Harvest">
+                <div class="card-content">
+                    <h3>Harvest</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+
+    <script>let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide .card');
+        
+        function showSlide(index) {
+            const slideContainer = document.querySelector('.slide');
+            const totalSlides = slides.length;
+            
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            
+            const offset = -currentIndex * 100;
+            slideContainer.style.transform = `translateX(${offset}%)`;
+        }
+        
+        setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, 3000);
+        </script>
+</body>
+</html>
